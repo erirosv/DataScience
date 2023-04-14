@@ -10,7 +10,7 @@ Defined tables:
 - customer
 - products
 
-![Diagram](images/DB-diagram.png)
+![Diagram](imgs/DB-diagram.png)
 
 ### table attributes
 **sales:**
