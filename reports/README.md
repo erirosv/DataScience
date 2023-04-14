@@ -4,6 +4,8 @@ This is a small project where you need to design/create a SQL-DB with data. From
 
 Note, the focus on this project is not on the database design. It is only an addition to make the **data analysis**. There could be magnitude of ways to make the database more complex and then needed for normalization.
 
+## Information
+
 ## Tables
 Defined tables:
 - sales
