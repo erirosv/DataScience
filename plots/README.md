@@ -1,0 +1,3 @@
+# Plot Styling in matplotlib
+
+Some ideas how to make plots look better when plotting data...
