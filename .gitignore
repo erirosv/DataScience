@@ -2,6 +2,8 @@
 .DS_Store
 */.DS_Store
 .env
+kaggle/Santander_Customer_Transaction_Prediction_Dataset/data/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
