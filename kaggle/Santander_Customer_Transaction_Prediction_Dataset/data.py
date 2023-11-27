@@ -23,5 +23,6 @@ def get_tensordata() -> TensorDataset:
     
     X_test_tensor = torch.tensor(X_test.values, dtype=torch.float32)
     test_dataset = TensorDataset(X_test_tensor, y_train_tensor)
+    print('Reading dataset')
 
     return train_dataset, val_dataset, test_dataset, test_id

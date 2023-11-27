@@ -14,16 +14,19 @@ def available_device():
     if torch.cuda.is_available(): DEVICE = 'cuda'
     elif torch.backends.mps.is_available(): DEVICE = 'mps'
     else: DEVICE
+    print(f'DEVICE {DEVICE}')
     return DEVICE
 
 def prep_training():
     model = Net(input_size=400, hidden_dimentions=100).to(available_device())
+    print('Init...')
     optimizer = optim.Adam(model.parameters(), lr=1e-2, weight_decay=1e-5)
     loss_function = nn.BCELoss()
     train_dataset, validation_dataset, test_dataset, test_id = get_tensordata()
     train_loader = DataLoader(train_dataset, batch_size=1024, shuffle=True)
     validation_loader = DataLoader(validation_dataset, batch_size=1024)
     test_loader = DataLoader(test_dataset, batch_size=1024)
+    print('Data components created')
     return model, optimizer, loss_function, train_loader, validation_loader, test_loader
 
 def get_predictions(loader, model, device): 
@@ -39,6 +42,7 @@ def get_predictions(loader, model, device):
             predictions += scores.tolist()
             true_labels += y.tolist()
     model.train()
+    print('Evalueating result')
     return  predictions, true_labels
 
 
