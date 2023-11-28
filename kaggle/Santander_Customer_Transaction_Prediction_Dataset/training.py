@@ -18,7 +18,7 @@ def available_device():
     return DEVICE
 
 def prep_training():
-    model = Net(input_size=400, hidden_dimentions=100).to(available_device())
+    model = Net(input_size=200, hidden_dimentions=100).to(available_device())
     print('Init...')
     optimizer = optim.Adam(model.parameters(), lr=1e-2, weight_decay=1e-5)
     loss_function = nn.BCELoss()
@@ -59,4 +59,6 @@ def run_training(epoch=10):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+    print('Model result saving...')
     get_result_to_csv(model, test_loader, id, available_device())
+    print('Complete')
